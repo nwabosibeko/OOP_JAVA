@@ -49,6 +49,17 @@ public class Game {
 
     }
 
-    public void anotherRound{}
+    public void anotherRound{
+
+        String playAgain = "y";
+        while (playAgain.equalsIgnoreCase("y")) {
+            playerRounds();
+            playAgain = JOptionPane.showInputDialog(new JFrame(), "Do you want to play another round? (y/n): ");
+
+        }
+
+        System.out.println("Thank you for playing! Your final score is: " + this.play.getUser_score());
+
+    }
 
 }
