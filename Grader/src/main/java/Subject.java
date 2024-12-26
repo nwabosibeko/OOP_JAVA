@@ -13,5 +13,12 @@ public class Subject {
     }
 
 
+    public double getMark() {
+        return mark;
+    }
+
+    public String getSubName() {
+        return subName;
+    }
 
 }
