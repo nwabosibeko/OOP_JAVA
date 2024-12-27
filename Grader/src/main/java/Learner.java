@@ -35,6 +35,26 @@ public class Learner {
         return getTotalMarks() / subjects.size();
     }
 
+    private String calculateGradeSymbol(double mark) {
+
+        if (mark >= 90) return "A";
+        else if (mark >= 80) return "B";
+        else if (mark >= 70) return "C";
+        else if (mark >= 60) return "D";
+        else return "F";
+    }
+
+    public Map<String, String> getSubjectGrades() {
+        Map<String, String> subjectGrades = new HashMap<>();
+
+        for (Subject subject : subjects) {
+            String grade = calculateGradeSymbol(subject.getMark());
+            subjectGrades.put(subject.getSubName(), grade);
+        }
+
+        return subjectGrades;
+    }
+
 
 
 }
