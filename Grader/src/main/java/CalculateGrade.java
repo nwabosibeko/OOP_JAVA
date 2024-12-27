@@ -69,5 +69,19 @@ public class CalculateGrade {
 
     }
 
+    public static String calculateGradeAverage(double avgPercentage) {
+        if(avgPercentage >= 90) {
+            return GREEN + "A+" + RESET;
+        } else if (avgPercentage >= 80) {
+            return GREEN + "A" + RESET;
+        } else if (avgPercentage >= 70) {
+            return YELLOW + "B" + RESET;
+        } else if (avgPercentage >= 60) {
+            return YELLOW + "C" + RESET;
+        } else if (avgPercentage >= 50){
+            return ORANGE + "D" + RESET;
+        }
+        return RED + "F" + RESET;
+    }
 
 }
