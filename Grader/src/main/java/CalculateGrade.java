@@ -65,7 +65,10 @@ public class CalculateGrade {
             System.out.printf(subjectName.toUpperCase() + "\t\t  " + mark + "\t\t  (" + grade + ")\n");
 
         }
-
+        System.out.println("\nOverall Results");
+        System.out.printf("Total Marks: %.2f%n", learner.getTotalMarks());
+        System.out.printf("Average Percentage: %.2f%%%n", learner.getAveragePercentage());
+        System.out.println("Final Grade: " + calculateGradeAverage(learner.getAveragePercentage()));
 
     }
 
