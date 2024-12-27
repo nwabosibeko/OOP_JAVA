@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Learner {
 
@@ -21,5 +23,18 @@ public class Learner {
     public ArrayList<Subject> getSubjects() {
         return subjects;
     }
+
+    public double getTotalMarks() {
+        return subjects.stream().mapToDouble(Subject::getMark).sum();
+    }
+
+    public double getAveragePercentage() {
+        if (subjects.isEmpty()) {
+            return 0;
+        }
+        return getTotalMarks() / subjects.size();
+    }
+
+
 
 }
