@@ -1,3 +1,4 @@
+import java.util.Map;
 import java.util.Scanner;
 
 public class CalculateGrade {
@@ -44,5 +45,29 @@ public class CalculateGrade {
 
             learner.addSubject(subjectName, subjectMark);
         }
+
+        System.out.println("\nGRADE REPORT:\t" + learner.getName() +
+                "\n_________________________________");
+
+        Map<String, String> subjectGrades = learner.getSubjectGrades();
+
+        System.out.println("Subject\t\t|Mark\t\t|Grade\t|" +
+                "\n____________|___________|_______|");
+
+        for (Map.Entry<String, String> entry : subjectGrades.entrySet()) {
+            String subjectName = entry.getKey();
+            String grade = entry.getValue();
+            double mark = learner.getSubjects().stream()
+                    .filter(s -> s.getSubName().equals(subjectName))
+                    .findFirst()
+                    .map(Subject::getMark)
+                    .orElse(0.0);
+            System.out.printf(subjectName.toUpperCase() + "\t\t  " + mark + "\t\t  (" + grade + ")\n");
+
+        }
+
+
     }
+
+
 }
