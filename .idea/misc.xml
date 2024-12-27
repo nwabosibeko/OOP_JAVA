@@ -5,7 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/NumberGuess/pom.xml" />
-        <option value="$PROJECT_DIR$/GuessTheNumber/pom.xml" />
+        <option value="$PROJECT_DIR$/Grader/pom.xml" />
       </list>
     </option>
   </component>
