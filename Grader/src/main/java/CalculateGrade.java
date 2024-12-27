@@ -27,5 +27,22 @@ public class CalculateGrade {
 
         System.out.println("Enter your Name and Surname: ");
         String studentName = input.nextLine();
+
+        System.out.println("Enter number of subjects: ");
+        int numberOfSubjects = input.nextInt();
+        input.nextLine();
+
+        Learner learner = new Learner(studentName);
+
+        for (int i = 0; i < numberOfSubjects; i++) {
+            System.out.println("Enter subject name: ");
+            String subjectName = input.nextLine();
+
+            System.out.println("Enter subject mark for " + subjectName + ": ");
+            double subjectMark = input.nextDouble();
+            input.nextLine();
+
+            learner.addSubject(subjectName, subjectMark);
+        }
     }
 }
